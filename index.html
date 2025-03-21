@@ -249,7 +249,7 @@
   <body>
     <div class="music-notes"></div>
     <div class="container">
-      <h1>MusicLyric Glow</h1>
+      <h1>Lyrics Auto Scroller</h1>
 
       <div class="controls">
         <input type="text" id="songTitle" placeholder="✨ Song Title" />
@@ -270,18 +270,11 @@
         <button onclick="document.getElementById('fileInput').click()">
           Open File
         </button>
-        <!-- <input
-          type="file"
-          id="fileInput"
-          style="display: none"
-          accept=".txt"
-          onchange="openFile(event)"
-        /> -->
         <input
           type="file"
           id="fileInput"
           style="display: none"
-          accept=".txt,.las"
+          accept=".txt,.las,.md"
           onchange="openFile(event)"
         />
         <button id="saveButton" onclick="saveLyrics()">Save Lyrics</button>
@@ -358,7 +351,7 @@
           ) {
             lyricsBox.scrollTop = 0;
           }
-        }, 50);
+        }, 150);
       }
 
       // Stop scrolling
