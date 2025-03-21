@@ -3,7 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lyrics Auto Scroller 🎸</title>
+    <title>Magic Lyrics 🎸</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="mandolin.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="mandolin.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="mandolin.svg" />
+
+    <!-- Open Graph Meta Tags (for Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="Lyrics Auto Scroller 🎸" />
+    <meta property="og:description" content="Scroll through your favorite song lyrics effortlessly with this auto-scrolling tool!" />
+    <meta property="og:image" content="https://yourwebsite.com/images/preview-image.jpg" />
+    <meta property="og:url" content="https://yourwebsite.com/lyrics-auto-scroller" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lyrics Auto Scroller 🎸" />
+    <meta name="twitter:description" content="Scroll through your favorite song lyrics effortlessly with this auto-scrolling tool!" />
+    <meta name="twitter:image" content="https://yourwebsite.com/images/preview-image.jpg" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Righteous&family=Quicksand:wght@400;700&display=swap");
 
@@ -67,6 +85,19 @@
         animation: shimmer 4s linear infinite;
         font-family: "Righteous", cursive;
         font-size: 3em;
+        margin-bottom: 30px;
+        text-shadow: 0 0 20px rgba(255, 105, 180, 0.7);
+      }
+      p {
+        text-align: center;
+        color: transparent;
+        background: linear-gradient(45deg, #ff86ff, #9a66ff, #4dffff);
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        animation: shimmer 8s linear infinite;
+        font-family: "Righteous", cursive;
+        font-size: 1.2em;
         margin-bottom: 30px;
         text-shadow: 0 0 20px rgba(255, 105, 180, 0.7);
       }
@@ -249,7 +280,8 @@
   <body>
     <div class="music-notes"></div>
     <div class="container">
-      <h1>Lyrics Auto Scroller</h1>
+      <h1>Magic Lyrics</h1>
+      <p>Lyrics Auto Scroller</p>
 
       <div class="controls">
         <input type="text" id="songTitle" placeholder="✨ Song Title" />
@@ -397,11 +429,11 @@
 
         const jsonContent = JSON.stringify(saveData);
 
-        // Save as .las (MusicLyric Glow) file
+        // Save as .mag(MusicLyric Glow) file
         const blob = new Blob([jsonContent], { type: "application/json" });
         const link = document.createElement("a");
         link.href = URL.createObjectURL(blob);
-        link.download = `${artistName} - ${songTitle}.las`;
+        link.download = `${artistName} - ${songTitle}.mag`;
         link.click();
 
         // Save animation
@@ -422,7 +454,7 @@
         const reader = new FileReader();
 
         // Handle different file formats
-        if (file.name.endsWith(".las")) {
+        if (file.name.endsWith(".mag")) {
           // Our custom format with formatting
           reader.onload = (e) => {
             try {
